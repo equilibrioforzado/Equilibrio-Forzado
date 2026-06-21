@@ -1,0 +1,304 @@
+/* --- CONFIGURACIÓN GLOBAL --- */
+body {
+    background-color: #000;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* --- HEADER Y MENÚ (Comunes) --- */
+.logo img {
+    display: block;
+    max-width: 500px;
+    margin-left: 20px;
+    padding-top: 30px;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    padding: 20px 20px;
+    margin: 0;
+    border-top: 2px solid #ff00ff; /* Línea divisoria superior */
+    gap: 40px;
+}
+
+.menu a {
+    color: #ff00ff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Estado activo: pone la línea fucsia debajo del link seleccionado */
+.menu a.active {
+    border-bottom: 2px solid #ff00ff;
+    padding-bottom: 5px;
+}
+
+.CapasCiudad {
+    -webkit-mask-image: radial-gradient(circle, black 80%, transparent 100%);
+    mask-image: radial-gradient(circle, black 80%, transparent 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400%;
+    padding-top: 600px;
+    pointer-events: none; /* Esto hace que la imagen no interfiera con los clics en el menú */
+}
+
+
+
+/* --- ESTILOS ESPECÍFICOS DE "SERIE" --- */
+.serie-content {
+    padding: 40px 20px;
+    color: #ff00ff;
+    text-align: center;
+}
+
+.serie-content h2 {
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.video-container {
+    background-color: #000;
+    width: 80%;
+    max-width: 900px; 
+    height: 500px; /* Esta altura la puedes ajustar a tu gusto */
+    margin: 20px auto;
+    border: 2px solid #ff00ff;
+    overflow: hidden; 
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Esto quita el borde gris que trae por defecto el iframe */
+}
+
+.sinopsis {
+    margin-top: 30px;
+    font-style: italic;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- ESTILOS DEL FORO --- */
+.foro-content {
+    padding: 40px 20px;
+    color: #ff00ff;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.formulario-foro {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.fila {
+    display: flex;
+    gap: 15px;
+}
+
+.fila input { flex: 1; }
+
+.formulario-foro input, 
+.formulario-foro textarea {
+    background: transparent;
+    border: 1px solid #ff00ff;
+    color: #ff00ff;
+    padding: 10px;
+}
+
+.formulario-foro button {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    align-self: center;
+    font-weight: bold;
+}
+
+.footer-nota {
+    font-size: 0.8rem;
+    margin-top: 40px;
+    opacity: 0.7;
+}
+
+.mensajes-feed {
+    border-top: 2px solid #ff00ff;
+    padding-top: 30px;
+}
+
+/* Las tarjetas de propuestas */
+.mensaje {
+    border: 1px solid #555;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #000;
+}
+
+/* Botón de Comentar */
+.btn-comentar {
+    background: transparent;
+    border: 1px solid #ff00ff;
+    color: #ff00ff;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-comentar:hover {
+    background: #ff00ff;
+    color: #000;
+}
+
+/* Espacio donde irán los comentarios hijos */
+.area-comentarios {
+    margin-top: 15px;
+    padding-left: 20px;
+    border-left: 1px solid #ff00ff;
+}
+
+.btn-comentar {
+    background: transparent;
+    border: 1px solid #ff00ff;
+    color: #ff00ff;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.area-comentarios input {
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+    padding: 5px;
+    width: 70%;
+}
+
+.respuesta-box {
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.respuesta-box input {
+    flex-grow: 1;
+    background: #333;
+    border: none;
+    padding: 5px;
+    color: white;
+}
+
+.btn-enviar-res {
+    background: #ff00ff; /* O el color de tu marca */
+    border: none;
+    cursor: pointer;
+}
+
+.seccion-personajes {
+    display: flex;
+    flex-direction: column; /* Apila las tarjetas */
+    align-items: center;    /* Las centra horizontalmente */
+    gap: 100px;              /* Espacio entre personajes */
+    padding: 80px;
+}
+
+.personaje-contenedor {
+    position: absolute; 
+    width: 600px;        /* Ancho de la tarjeta */
+    height: 400px;       /* Alto de la tarjeta */
+    border-radius: 15px;
+    overflow: hidden;    /* Corta cualquier cosa que se salga del borde */
+    border: 2px solid #333; /* Borde oscuro por defecto */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto hover general en la tarjeta */
+.personaje-contenedor:hover {
+    transform: scale(1.02); /* Se agranda un poquito */
+    border-color: #ff00ff; /* El borde se vuelve rosa neón */
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5); /* Brillo neón */
+}
+
+.img-personaje {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    transition: filter 0.3s ease; /* Para oscurecer la foto */
+}
+
+.texto-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* ESTA LÍNEA ES LA QUE TE FALTA */
+    box-sizing: border-box; 
+    
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px; /* Ahora el padding se suma hacia ADENTRO */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    text-align: left;
+}
+
+/* Y asegurate de que el contenedor tenga esto */
+.personaje-contenedor {
+    position: relative;
+    width: 1000px;
+    height: 800px;
+    box-sizing: border-box; /* Fundamental para que el borde no rompa el tamaño */
+    overflow: hidden;
+    gap: 100px;
+}
+
+/* LA MAGIA: Cuando hacés hover en el contenedor, mostrás el overlay */
+.personaje-contenedor:hover .texto-overlay {
+    opacity: 1;
+}
+
+/* Opcional: Oscurecer un poco la foto de fondo al hacer hover */
+.personaje-contenedor:hover .img-personaje {
+    filter: brightness(50%);
+}
+
+/* Un efecto lindo cuando pasas el mouse por encima */
+.img-personaje:hover {
+    transform: scale(1.05);
+}
+
+.contenido-central {
+    max-width: 800px;      /* Controla el ancho máximo */
+    margin: 50px auto;     /* Centra el bloque en pantalla */
+    padding: 20px;
+    text-align: center;    /* Centra el texto y los títulos */
+    color: white;          /* Ajustá según tu fondo */
+}
+
+/* Para que el título destaque */
+.contenido-central h2 {
+    color: #ff00ff;        /* Tu color neón */
+    margin-bottom: 20px;
+}
+
+/* Mejora el párrafo */
+.contenido-central p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
